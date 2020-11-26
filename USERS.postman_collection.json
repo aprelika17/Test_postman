@@ -1,0 +1,384 @@
+{
+	"info": {
+		"_postman_id": "e9d554e3-4e78-4f0f-95e2-48565da1430c",
+		"name": "USERS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "createuserwithtasks",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "manager@mail.ru",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"email\": \"test_menkova5@mail.ru\",\r\n \"name\": \"Анастасия5\", \r\n \"tasks\": [{\r\n   \"title\": \"Менькова А.А.\",\r\n   \"description\": \"Купить хлеб\"\r\n  },\r\n  {\r\n   \"title\": \"Менькова А.А.\",\r\n   \"description\": \"Купить вискас\"\r\n  }\r\n ],\r\n \"companies\": [19277, 19278]\r\n}\r\n\r\n",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "http://users.bugred.ru/tasks/rest/createuserwithtasks",
+					"protocol": "http",
+					"host": [
+						"users",
+						"bugred",
+						"ru"
+					],
+					"path": [
+						"tasks",
+						"rest",
+						"createuserwithtasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createcompany",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "manager@mail.ru",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"company_name\": \"Зачем мне все это\",\r\n\"company_type\": \"ОАО\",\r\n\"company_users\": [\"test_menkova2@mail.ru\"],\r\n\"email_owner\": \"test_menkova@mail.ru\"\r\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "http://users.bugred.ru/tasks/rest/createcompany",
+					"protocol": "http",
+					"host": [
+						"users",
+						"bugred",
+						"ru"
+					],
+					"path": [
+						"tasks",
+						"rest",
+						"createcompany"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddAvatar",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "manager@mail.ru",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "test_menkova@mail.ru",
+							"type": "text"
+						},
+						{
+							"key": "avatar",
+							"type": "file",
+							"src": []
+						}
+					],
+					"options": {
+						"formdata": {}
+					}
+				},
+				"url": {
+					"raw": "http://users.bugred.ru/tasks/rest/AddAvatar",
+					"protocol": "http",
+					"host": [
+						"users",
+						"bugred",
+						"ru"
+					],
+					"path": [
+						"tasks",
+						"rest",
+						"AddAvatar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddTaskInCron",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "manager@mail.ru",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"email_owner\":\"test_menkova@mail.ru\",\r\n\"task_id\":\"18933\",\r\n\"hours\":13,\r\n\"minutes\":37,\r\n\"month\":\"09\",\r\n\"days\":19,\r\n\"day_weeks\":1\r\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "http://users.bugred.ru/tasks/rest/AddTaskInCron",
+					"protocol": "http",
+					"host": [
+						"users",
+						"bugred",
+						"ru"
+					],
+					"path": [
+						"tasks",
+						"rest",
+						"AddTaskInCron"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateTask",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "manager@mail.ru",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "task_title",
+							"value": "Ура! Все получилось!",
+							"type": "text"
+						},
+						{
+							"key": "task_description",
+							"value": "Задача создана с первого раза :)",
+							"type": "text"
+						},
+						{
+							"key": "email_owner",
+							"value": "test_menkova@mail.ru",
+							"type": "text"
+						},
+						{
+							"key": "email_assign",
+							"value": "test_menkova@mail.ru",
+							"type": "text"
+						}
+					],
+					"options": {
+						"formdata": {}
+					}
+				},
+				"url": {
+					"raw": "http://users.bugred.ru/tasks/rest/CreateTask",
+					"protocol": "http",
+					"host": [
+						"users",
+						"bugred",
+						"ru"
+					],
+					"path": [
+						"tasks",
+						"rest",
+						"CreateTask"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddTaskInCron",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "manager@mail.ru",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "test_test_test@mail.ru",
+							"type": "text"
+						},
+						{
+							"key": "field",
+							"value": "gender",
+							"type": "text"
+						},
+						{
+							"key": "value",
+							"value": "f",
+							"type": "text"
+						}
+					],
+					"options": {
+						"formdata": {}
+					}
+				},
+				"url": {
+					"raw": "http://users.bugred.ru/tasks/rest/AddTaskInCron",
+					"protocol": "http",
+					"host": [
+						"users",
+						"bugred",
+						"ru"
+					],
+					"path": [
+						"tasks",
+						"rest",
+						"AddTaskInCron"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "magicsearch",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "manager@mail.ru",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"query\":\"Ромашка test\"\r\n\r\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "http://users.bugred.ru/tasks/rest/magicsearch",
+					"protocol": "http",
+					"host": [
+						"users",
+						"bugred",
+						"ru"
+					],
+					"path": [
+						"tasks",
+						"rest",
+						"magicsearch"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
